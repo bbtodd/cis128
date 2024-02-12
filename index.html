@@ -4,39 +4,147 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>CIS-128-OLH-Mobile Web App Development-CRN 43884</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <meta name="description" content="Introductory web page for CIS 128">
+    <title>Assignment 1: CIS-128-OLH-Mobile Web App Development</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $(".hdr-animation").click(function(){
+            $( "header h1" ).animate({
+                fontSize: "3em",
+                color: "blue",
+            }, 1500, function(){
+                console.log("done");
+                $( "header h1" ).animate({
+                    fontSize: "2em",
+                    color: "black",
+                }, 1500);
+            });
+
+            $( ".bio-pic" ).animate({
+                borderWidth: "4px",
+            }, 500 );
+
+            $( "header h1" ).css({
+                color: "dodgerblue",
+            });
+
+            setTimeout(changeH1toBlack, 3000);
+        });
+
+        function changeH1toBlack() {
+            document.getElementsByTagName("h1")[0].style.color = "black";
+        }
+    
+    });
+
+    </script>
+
+
   </head>
   <body>
 
-    <main>
-        <h1>CIS-128-OLH-Mobile Web App Development-CRN 43884</h1>
-        
-        <p>
-            My name is Bill Todd and I spent most of my life on the east coast but have been residing in Belmont, CA for about five years now. 
-            I enjoy being a key player behind the scenes who brings great things (apps, websites, campaigns) to life. 
-            I have spent many years working in graphic design of print and digital materials but currently work in email marketing.
-            When I'm not working I'm often playing with my two kids or hiking and biking on the trails around here.
-        </p>
-        <p>
-            I am taking CIS-128 because I'm working towards a degree in Computer Science and looking to transition more into a career on the development side.
-            And because I'm not completely sure what exactly is the difference is between a website and web app and curious to learn more. 
-        </p>
-        <h3>Technologies for this class</h3>
-        <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-        </ul>
+    <style>
+* {
+        margin:0;
+        padding:0;
+    }
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    line-height: 1.25em;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+header,
+main,
+footer {
+  padding: 20px 60px;
+  background: #eaeaea;
+}
+
+p {
+    margin: .75em 0;
+}
+h1 {
+  font-size: 2em;
+  line-height: 1.2em;
+  margin: 0.75em 0;
+  text-align: center;
+}
+h2 {
+  font-size: 1.25em;
+  line-height: 1.2em;
+  margin: 0.75em 0;
+  text-align: center;
+}
+h3, h4 {
+  font-size: 1em;
+  line-height: 1.2em;
+  margin: 0.75em 0;
+  text-align: center;
+}
+
+button {
+    background-color: dodgerblue;
+    padding: 12px;
+    color: #333333;
+    font-weight: 700;
+}
+
+.bio-pic {
+    float: left;
+    border-width: 0px;
+    border-style: solid;
+    margin: .75em .75em .75em 0;
+}
+
+</style>
+
+
+
+    <div class="wrapper">
+      <header>
+        <h1>CIS-128-OLH-Mobile Web App Development</h1>
+      </header>
       
-        <article>
-          <h2>Google Chrome</h2>
-          <p>Google Chrome is a web browser developed by Google, released in 2008. Chrome is the world's most popular web browser today!</p>
-        </article>
+      <main>
+          
+          <img class="bio-pic" alt="Bill by the ocean circa 2022" src="http://billbobtodd.com/cis128/images/bbt.jpg">
+          <p>
+              My name is Bill Todd and I spent most of my life on the east coast but have been residing in Belmont, CA for about five years now. 
+              I enjoy being a key player behind the scenes who brings great things (like websites or marketimg campaigns) to life. 
+              I have spent many years working in graphic design of print and digital materials but currently work in email marketing.
+              When I'm not working I'm often playing with my two kids or hiking and biking on the trails around here.
+          </p>
+          <div style="clear:both;"></div>
+          <p>
+              I am taking CIS-128 because I'm working towards a degree in Computer Science and looking to transition more into a career on the development side.
+              And because I'm not completely sure what exactly is the difference is between a website and web app and curious to learn more. 
+          </p>
+          <button class="hdr-animation">Start Animation</button>
 
-    </main>
-
-	<script src="index.js"></script>
+          <h2 class="center">Technologies for this class</h2>
+          <ul>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+          </ul>
+        
+          <h2 class="center">Resources</h2>
+          <ul>
+            <li><a target="_blank" href="https://codewars.com">Codewars</a> A great place to practice your coding skills.</li>
+            <li><a target="_blank" href="https://www.youtube.com/c/Fireship">Fireship on Youtube</a> The most entertaining coding tutorials on the net.</li>
+          </ul>
+ 
+      </main>
+      <footer>&copy; billbobtodd.com</footer>
+    </div>
   </body>
 </html>
