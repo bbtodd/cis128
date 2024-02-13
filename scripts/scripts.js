@@ -10,7 +10,7 @@
                     color: "black",
                 }, 1500);
             });
-
+            
             $( ".bio-pic" ).animate({
                 borderWidth: "4px",
             }, 500 );
@@ -23,7 +23,10 @@
         });
 
         function changeH1toBlack() {
-            document.getElementsByTagName("h1")[0].style.color = "black";
+            $( "header h1" ).css({
+                color: "black",
+            });
+            //document.getElementsByTagName("h1")[0].style.color = "black";
         }
     
     });
